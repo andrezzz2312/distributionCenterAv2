@@ -1,60 +1,5 @@
 //variableStart
-const documentRoutes = {
-	turnlock100: {
-		drawings: [],
-		miscellaneous: ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'],
-		imagesVideos: ['asd.png', 'turnlock101.png'],
-		specifications: [],
-	},
-	tourlock180: {
-		drawings: [],
-		miscellaneous: [],
-		imagesVideos: [],
-		specifications: [],
-	},
-	lifelineSwing: {
-		drawings: [],
-		miscellaneous: [],
-		imagesVideos: [],
-		specifications: [],
-	},
-	circlelockSolo: {
-		drawings: [],
-		miscellaneous: [],
-		imagesVideos: [],
-		specifications: [],
-	},
-	circlelockCombi: {
-		drawings: [],
-		miscellaneous: [],
-		imagesVideos: [],
-		specifications: [],
-	},
-	turnlock150: {
-		drawings: ['2 - Copy.pdf', '2.pdf', 'test1.pdf'],
-		miscellaneous: ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'],
-		imagesVideos: ['turnlock101.png', 'turnlock102.png', 'turnlock103.mp4'],
-		specifications: ['test1.pdf'],
-	},
-	turnlockSideGate: {
-		drawings: [],
-		miscellaneous: [],
-		imagesVideos: [],
-		specifications: [],
-	},
-	TQM: {
-		drawings: [],
-		miscellaneous: [],
-		imagesVideos: [],
-		specifications: [],
-	},
-	trilock60: {
-		drawings: [],
-		miscellaneous: ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'],
-		imagesVideos: ['asd.png', 'turnlock101.png'],
-		specifications: [],
-	},
-}
+const documentRoutes = {'turnlock100': {'drawings': [], 'miscellaneous': ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'], 'imagesVideos': ['asd.png', 'turnlock101.png'], 'specifications': []}, 'tourlock180': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'lifelineSwing': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'circlelockSolo': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'circlelockCombi': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'turnlock150': {'drawings': ['2 - Copy.pdf', '2.pdf', 'test1.pdf'], 'miscellaneous': ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'], 'imagesVideos': ['turnlock101.png', 'turnlock102.png', 'turnlock103.mp4'], 'specifications': ['test1.pdf']}, 'turnlockSideGate': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'TQM': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'trilock60': {'drawings': [], 'miscellaneous': ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'], 'imagesVideos': ['asd.png', 'turnlock101.png'], 'specifications': []}};
 //variableEnd
 
 // Variables
@@ -372,15 +317,15 @@ const buttonContent = {
 				textLeft: '0%',
 				textTop: '0%',
 				title: `<span style = 'font-weight:bold' data-subId = 'emergencyE'>Emergency Egress</span>`,
-				content: [
-					`Upon signal from alarm system, turnstile unlocks outbound allowing egress only`,
-				],
+				content: [],
 			},
 			finishO: {
 				textLeft: '0%',
 				textTop: '0%',
 				title: `<span style = 'font-weight:bold' data-subId = 'finishO'>Finish Options</span>`,
 				content: [],
+				paint: 2,
+				delay: [2],
 			},
 			documents: {
 				textLeft: '0%',
@@ -1765,10 +1710,12 @@ function createContent(obj) {
 					'imageContainer',
 					'finishContainer'
 				)
-
-				subVideoFinish1.src = `assets/${currentButton}/${nextButton}/paint/${nextButton}${1}.mp4`
-				subVideoFinish2.src = `assets/${currentButton}/${nextButton}/paint/${nextButton}${2}.mp4`
-				subVideoFinish3.src = `assets/${currentButton}/${nextButton}/paint/${nextButton}${3}.mp4`
+				if (paint === 2) {
+					subVideoFinish1.src = `assets/${currentButton}/${nextButton}/paint/${nextButton}${1}.mp4`
+					subVideoFinish2.src = `assets/${currentButton}/${nextButton}/paint/${nextButton}${2}.mp4`
+				} else if (paint === 3) {
+					subVideoFinish3.src = `assets/${currentButton}/${nextButton}/paint/${nextButton}${3}.mp4`
+				}
 
 				for (let i = 0; i < paint; i++) {
 					let infoContainer = document.createElement('div')
@@ -1966,7 +1913,8 @@ function createContent(obj) {
 		nextButton === 'lifelineSwing' ||
 		nextButton === 'circlelockSolo' ||
 		nextButton === 'circlelockCombi' ||
-		nextButton === 'turnlock150'
+		nextButton === 'turnlock150' ||
+		nextButton === 'trilock60'
 	) {
 		cornerIcons = document.createElement('div')
 		cornerIcons.classList.add('cornerIcons')

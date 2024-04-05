@@ -1,5 +1,60 @@
 //variableStart
-const documentRoutes = {'turnlock100': {'drawings': ['test1.pdf'], 'miscellaneous': ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'], 'imagesVideos': ['asd.png', 'turnlock101.png'], 'specifications': ['test1.pdf']}, 'tourlock180': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'lifelineSwing': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'circlelockSolo': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'circlelockCombi': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'turnlock150': {'drawings': ['test1.pdf'], 'miscellaneous': ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'], 'imagesVideos': ['asd.png', 'turnlock101.png'], 'specifications': ['test1.pdf']}, 'turnlockSideGate': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'TQM': {'drawings': [], 'miscellaneous': [], 'imagesVideos': [], 'specifications': []}, 'trilock60': {'drawings': ['test1.pdf'], 'miscellaneous': ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'], 'imagesVideos': ['asd.png', 'turnlock101.png'], 'specifications': ['test1.pdf']}};
+const documentRoutes = {
+	turnlock100: {
+		drawings: ['test1.pdf'],
+		miscellaneous: ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'],
+		imagesVideos: ['asd.png', 'turnlock101.png'],
+		specifications: ['test1.pdf'],
+	},
+	tourlock180: {
+		drawings: [],
+		miscellaneous: [],
+		imagesVideos: [],
+		specifications: [],
+	},
+	lifelineSwing: {
+		drawings: [],
+		miscellaneous: [],
+		imagesVideos: [],
+		specifications: [],
+	},
+	circlelockSolo: {
+		drawings: [],
+		miscellaneous: [],
+		imagesVideos: [],
+		specifications: [],
+	},
+	circlelockCombi: {
+		drawings: [],
+		miscellaneous: [],
+		imagesVideos: [],
+		specifications: [],
+	},
+	turnlock150: {
+		drawings: ['test1.pdf'],
+		miscellaneous: ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'],
+		imagesVideos: ['asd.png', 'turnlock101.png'],
+		specifications: ['test1.pdf'],
+	},
+	turnlockSideGate: {
+		drawings: [],
+		miscellaneous: [],
+		imagesVideos: [],
+		specifications: [],
+	},
+	TQM: {
+		drawings: [],
+		miscellaneous: [],
+		imagesVideos: [],
+		specifications: [],
+	},
+	trilock60: {
+		drawings: ['test1.pdf'],
+		miscellaneous: ['test1.pdf', 'turnlock101.png', 'turnlock103.mp4'],
+		imagesVideos: ['asd.png', 'turnlock101.png'],
+		specifications: ['test1.pdf'],
+	},
+}
 //variableEnd
 
 // Variables
@@ -1704,6 +1759,7 @@ function createContent(obj) {
 
 				paragraph.appendChild(elementContainer)
 			} else if (nextButton === 'finishO') {
+				console.log('finishO')
 				elementContainer = document.createElement('span')
 				elementContainer.classList.add(
 					'elementContainer',
@@ -1714,6 +1770,8 @@ function createContent(obj) {
 					subVideoFinish1.src = `assets/${currentButton}/${nextButton}/paint/${nextButton}${1}.mp4`
 					subVideoFinish2.src = `assets/${currentButton}/${nextButton}/paint/${nextButton}${2}.mp4`
 				} else if (paint === 3) {
+					subVideoFinish1.src = `assets/${currentButton}/${nextButton}/paint/${nextButton}${1}.mp4`
+					subVideoFinish2.src = `assets/${currentButton}/${nextButton}/paint/${nextButton}${2}.mp4`
 					subVideoFinish3.src = `assets/${currentButton}/${nextButton}/paint/${nextButton}${3}.mp4`
 				}
 
